@@ -37,6 +37,10 @@ function ReactIntro() {
       <div>
         <Link to="/jsxIntro">Go to JsxIntro Page</Link>
       </div>
+
+      <div>
+        <Link to="/emoji">Go to Emoji Page</Link>
+      </div>
       
     </>
   )
