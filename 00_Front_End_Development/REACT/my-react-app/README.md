@@ -1,3 +1,6 @@
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD029 -->
+
 # 1. JS Quick Refesh
 
 ## 1.1 Adding  JS to Project
@@ -454,7 +457,7 @@ export default function Section({title, ...props}) {
 
 ### 2.3.1 Fragment
 
-When we use component in react, we need return a whole body, rather than multiple, sometime we use <div>, but it will add a div into the content
+When we use component in react, we need return a whole body, rather than multiple, sometime we use ```<div>```, but it will add a div into the content
 
 Methods:
 
@@ -1269,7 +1272,7 @@ As we said before, when component reexcute, the function into the [] will detect
 1. Component Tree Construction
 Component Tree: When an application is running, React organizes these components into a tree-like structure called the component tree. Each component in the tree can have one or more child components, forming a hierarchical structure.
 
-Rendering: The root component (usually <App />) is at the top of this tree, and React recursively renders each component down the tree, turning them into the HTML that gets displayed in the browser.
+Rendering: The root component (usually ```<App />```) is at the top of this tree, and React recursively renders each component down the tree, turning them into the HTML that gets displayed in the browser.
 
 2. Virtual DOM
 

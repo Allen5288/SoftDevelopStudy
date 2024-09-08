@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { createPortal } from 'react-dom';
-import "./Modal.css"
+import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
+import "./Modal.css";
 
-export default function Modal({ children, open, onClose, className = '' }) {
+export default function Modal({ children, open, onClose, className = "" }) {
   const dialog = useRef();
 
   useEffect(() => {
@@ -16,9 +16,11 @@ export default function Modal({ children, open, onClose, className = '' }) {
   }, [open]);
 
   return createPortal(
-    <dialog ref={dialog} className={`modal ${className}`} onClose={onClose}>
-      {children}
-    </dialog>,
-    document.getElementById('modal')
+    <div id="food-order-modal">
+      <dialog ref={dialog} className={`modal ${className}`} onClose={onClose}>
+        {children}
+      </dialog>
+    </div>,
+    document.getElementById("modal")
   );
 }

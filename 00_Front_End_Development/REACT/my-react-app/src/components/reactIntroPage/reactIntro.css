@@ -3,43 +3,34 @@
   background-color: #e0f7fa; /* 柔和的浅蓝色背景 */
   color: #333;
   margin: 0;
-  padding: 0;
+  padding: 20px; /* 添加全局内边距 */
   min-height: 100vh; /* 使整个页面的最小高度为视窗高度 */
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  /* 应用容器的样式 */
   .App {
     text-align: center;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 90%;
-    max-width: 500px;
+    margin: 20px 0;
+    width: 100%;
+    max-width: 800px; /* 增加最大宽度 */
   }
 
+  /* 标题样式 */
   .App h1 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* 缩小字体以适应更大的容器 */
     color: #00796b;
   }
 
   .App h2 {
     font-size: 1.5rem;
-    color: #888;
+    color: #555; /* 使次级标题颜色稍微暗一些 */
     margin-top: 10px;
-  }
-
-  /* 按钮容器样式 */
-  .button-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    max-width: 500px; /* 限制按钮容器的宽度，使其更集中 */
-    margin: 0 auto; /* 居中 */
   }
 
   /* 按钮样式 */
@@ -47,13 +38,20 @@
     background-color: #80cbc4; /* 舒缓的浅青色 */
     color: #ffffff;
     border: none;
-    padding: 8px 16px;
+    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
     transition: background-color 0.3s ease;
+    width: 100%; /* 让按钮自动适应容器宽度 */
+    text-align: center; /* 居中文本 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 隐藏超出的文本 */
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
+    position: relative; /* 为了定位 hover 显示的全文本 */
   }
 
+  /* 鼠标悬停时更改背景颜色 */
   button:hover {
     background-color: #4db6ac;
   }
@@ -62,9 +60,42 @@
   button a {
     text-decoration: none;
     color: #ffffff;
+    display: block; /* 链接块级显示 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 隐藏超出的文本 */
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
   }
 
-  button a:hover {
+  /* 按钮 hover 显示全文本 */
+  button:hover::after {
+    content: attr(data-label); /* 显示完整文本 */
+    position: absolute;
+    top: -24px; /* 显示在按钮上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
     color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 3px;
+    white-space: nowrap; /* 不换行 */
+    z-index: 10;
+    font-size: 0.8rem;
+    width: auto;
+    max-width: 300px; /* 限制显示的最大宽度 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* 调整按钮容器的样式 */
+  .button-container {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(160px, 1fr)
+    ); /* 使用网格布局，自动填充列 */
+    gap: 10px; /* 减少按钮之间的间距 */
+    max-width: 1000px; /* 增加按钮容器的最大宽度 */
+    margin: 0 auto; /* 居中容器 */
+    padding: 0 10px; /* 减少内边距 */
   }
 }

@@ -4,33 +4,33 @@ import { Link } from "react-router-dom";
 function ReactIntro() {
   // 按钮数据数组
   const smallPages = [
-    { path: "/home", label: "Go to Home Page" },
-    { path: "/reactEssentials", label: "Go to reactEssentials Page" },
-    { path: "/ticTacToe", label: "Go to ticTacToe Page" },
-    { path: "/investmentCalculator", label: "Go to investmentCalculator Page" },
-    { path: "/styleAuthInput", label: "Go to styleAuthInput Page" },
-    { path: "/refPortalPlayers", label: "Go to refPortalPlayers Page" },
+    { path: "/home", label: "Home Page" },
+    { path: "/reactEssentials", label: "reactEssentials Page" },
+    { path: "/ticTacToe", label: "ticTacToe Page" },
+    { path: "/investmentCalculator", label: "investmentCalculator Page" },
+    { path: "/styleAuthInput", label: "styleAuthInput Page" },
+    { path: "/refPortalPlayers", label: "refPortalPlayers Page" },
     {
       path: "/tailWindProjectManagement",
-      label: "Go to tailWindProjectManagement Page",
+      label: "tailWindProjectManagement Page",
     },
     {
       path: "/contextShoppingCart",
-      label: "Go to contextShoppingCart Page",
+      label: "contextShoppingCart Page",
     },
     {
       path: "/sideEffectChooseDestination",
-      label: "Go to sideEffectChooseDestination Page",
+      label: "sideEffectChooseDestination Page",
     },
     {
       path: "/quizApp",
-      label: "Go to quizApp Page",
+      label: "quizApp Page",
     },
     // 将来可以在这里添加更多页面
   ];
 
   const middllePages = [
-    { path: "/foodOrderApp", label: "Go to foodOrderApp Page" },
+    { path: "/foodOrderApp", label: "foodOrderApp Page" },
     // 将来可以在这里添加更多页面
   ];
 
@@ -49,9 +49,9 @@ function ReactIntro() {
       <h2>Small Apps</h2>
       <div className="button-container">
         {smallPages.map((page) => (
-          <button key={page.path}>
-            <Link to={page.path}>{page.label}</Link>
-          </button>
+          <button key={page.path} data-label={page.label}>
+          <Link to={page.path}>{page.label}</Link>
+        </button>
         ))}
       </div>
 
@@ -59,9 +59,9 @@ function ReactIntro() {
       <h2>Midlle Apps</h2>
       <div className="button-container">
         {middllePages.map((page) => (
-          <button key={page.path}>
-            <Link to={page.path}>{page.label}</Link>
-          </button>
+          <button key={page.path} data-label={page.label}>
+          <Link to={page.path}>{page.label}</Link>
+        </button>
         ))}
       </div>
 
@@ -69,9 +69,9 @@ function ReactIntro() {
       <h2>Big Apps</h2>
       <div className="button-container">
         {bigPages.map((page) => (
-          <button key={page.path}>
-            <Link to={page.path}>{page.label}</Link>
-          </button>
+          <button key={page.path} data-label={page.label}>
+          <Link to={page.path}>{page.label}</Link>
+        </button>
         ))}
       </div>
     </div>

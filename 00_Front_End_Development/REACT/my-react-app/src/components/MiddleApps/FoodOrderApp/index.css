@@ -118,8 +118,6 @@
     padding: 0;
   }
 
-
-
   .cart-total {
     display: flex;
     justify-content: flex-end;
@@ -222,7 +220,6 @@
     color: #ffab04;
   }
 
-  
   .center {
     text-align: center;
   }

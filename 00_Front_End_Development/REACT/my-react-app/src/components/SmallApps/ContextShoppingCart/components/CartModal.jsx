@@ -16,13 +16,15 @@ const CartModal = forwardRef(function Modal({ title, actions }, ref) {
   });
 
   return createPortal(
-    <dialog id="modal" ref={dialog}>
-      <h2>{title}</h2>
-      <Cart />
-      <form method="dialog" id="modal-actions">
-        {actions}
-      </form>
-    </dialog>,
+    <div id="context-shopping-cart-modal">
+      <dialog id="modal" ref={dialog}>
+        <h2>{title}</h2>
+        <Cart />
+        <form method="dialog" id="modal-actions">
+          {actions}
+        </form>
+      </dialog>
+    </div>,
     document.getElementById("modal")
   );
 });
