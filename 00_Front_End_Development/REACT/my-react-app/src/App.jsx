@@ -13,6 +13,9 @@ import ContextShoppingCart from "./components/SmallApps/ContextShoppingCart/cont
 import SideEffectChooseDestination from "./components/SmallApps/SideEffectChooseDestination/sideEffectChooseDestination";
 import QuizApp from "./components/SmallApps/QuizApp/QuizApp";
 import FoodOrderApp from "./components/MiddleApps/FoodOrderApp/FoodOrderApp";
+import ReduxCartApp from "./components/MiddleApps/reduxCartApp/src/ReduxCartApp";
+import { Provider } from "react-redux";
+import store from "./components/MiddleApps/reduxCartApp/src/store";
 
 export default function App() {
   return (
@@ -20,6 +23,8 @@ export default function App() {
       <AppHeader />
       <Routes>
         <Route path="/" element={<ReactIntro />} />
+
+        {/* smallPages*/}
         <Route path="/home" element={<Home />} />
         <Route path="/reactEssentials" element={<ReactEssentials />} />
         <Route path="/ticTacToe" element={<TicTacToe />} />
@@ -39,7 +44,18 @@ export default function App() {
           element={<SideEffectChooseDestination />}
         />
         <Route path="/quizApp" element={<QuizApp />} />
+
+        {/* middllePages*/}
         <Route path="/foodOrderApp" element={<FoodOrderApp />} />
+        {/* Wrap only the ReduxCartApp in the Provider */}
+        <Route
+          path="/reduxCartApp"
+          element={
+            <Provider store={store}>
+              <ReduxCartApp />
+            </Provider>
+          }
+        />
       </Routes>
     </Router>
   );

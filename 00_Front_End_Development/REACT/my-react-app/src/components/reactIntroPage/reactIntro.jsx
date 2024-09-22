@@ -31,6 +31,7 @@ function ReactIntro() {
 
   const middllePages = [
     { path: "/foodOrderApp", label: "foodOrderApp Page" },
+    { path: "/reduxCartApp", label: "reduxCartApp Page" },
     // 将来可以在这里添加更多页面
   ];
 
